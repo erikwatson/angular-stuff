@@ -5,3 +5,59 @@
   <my-child></my-child>
   <my-child></my-child>
 </my-parent>
+
+<br />
+
+<div myRadioGroup [formControl]="greetingControl">
+  <div myRadioButton>
+    <input type="radio" myRadio name="greeting" value="hello" /> Hello
+    <div *myRadioButtonSelected>You have selected Hello</div>
+  </div>
+  <div myRadioButton>
+    <input type="radio" myRadio value="bonjour" name="greeting" /> Bonjour
+    <div *myRadioButtonSelected>You have selected Bonjour</div>
+  </div>
+  <div myRadioButton>
+    <input type="radio" myRadio value="ola" name="greeting" /> Ola
+    <div *myRadioButtonSelected>You have selected Ola</div>
+  </div>
+</div>
+
+{{ greetingControl.value }}
+
+<div>
+  <div>
+    <input
+      type="radio"
+      name="greeting"
+      value="hello"
+      [formControl]="greetingControl2"
+    />
+    Hello
+    <div *ngIf="greetingControl2.value === 'hello'">
+      You have selected Hello
+    </div>
+  </div>
+  <div>
+    <input
+      type="radio"
+      value="bonjour"
+      name="greeting"
+      [formControl]="greetingControl2"
+    />
+    Bonjour
+    <div *ngIf="greetingControl2.value === 'bonjour'">You have selected Bonjour</div>
+  </div>
+  <div>
+    <input
+      type="radio"
+      value="ola"
+      name="greeting"
+      [formControl]="greetingControl2"
+    />
+    Ola
+    <div *ngIf="greetingControl2.value === 'ola'">You have selected Ola</div>
+  </div>
+</div>
+
+{{ greetingControl2.value }}
