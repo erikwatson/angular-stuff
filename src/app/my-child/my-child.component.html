@@ -1,0 +1,8 @@
+<child-item>
+  <input type="radio" [checked]="checked" (click)="click($event)" /><span>{{
+    title
+  }}</span>
+  <div class="to-show">
+    <input *ngIf="checked" type="text" />
+  </div>
+</child-item>
